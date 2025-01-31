@@ -1,0 +1,98 @@
+@font-face {
+    font-family: vazir;
+    src:url(./assets/fonts/Vazirmatn-VariableFont_wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+html,
+body {
+    height: 100%;
+    line-height: 1;
+    font-family: vazir , 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+body{
+
+    background-color: #ffffff;
+}
+.card{
+    height: 475px;
+}
+.card-body{
+    overflow: scroll;
+}
+p{
+    text-align: justify;
+    line-height: 1.5rem;
+}
+header{
+    position: sticky;
+    width: 100%;
+    top: 0;
+    right: 0;
+    background-color: #ffffff;
+    z-index: 2;
+}
+footer{
+    background-color: #1a2363;
+    color: white;
+    padding-bottom: 3px;
+}
+.mainfooter{
+    display: flex;
+    justify-content: space-between;
+}
+
+.log:hover{
+    background-color: #1a2363;
+    color: white;
+}
