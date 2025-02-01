@@ -16,7 +16,7 @@ if ($_SESSION['user']['role'] != 'admin') {
 include_once('./database.php');
 
 
-if($_GET['id']==1 && $_SESSION['user']['id']!=1){
+if ($_GET['id'] == 1 && $_SESSION['user']['id'] != 1) {
   header('Location:./users.php');
   die;
 }
@@ -64,7 +64,7 @@ if (isset($_POST['edit_user_btn'])) {
   $role = $_POST['role'];
   $userid = $_GET['id'];
 
-  $sql = "UPDATE  users SET name = '$name', email = '$email' , password = '$password' , role = $role WHERE id = $userid ";
+  $sql = "UPDATE  users SET name = '$name', email = '$email' , password = '$password' , role = '$role' WHERE id = $userid ";
 
 
   // use exec() because no results are returned
@@ -76,9 +76,9 @@ if (isset($_POST['edit_user_btn'])) {
 
 
 
-// echo "<pre>" ;
-//           var_dump($_SESSION);
-//           echo "</pre>";
+echo "<pre>";
+var_dump($userinfo);
+echo "</pre>";
 
 ?>
 
@@ -128,45 +128,49 @@ if (isset($_POST['edit_user_btn'])) {
                 <input name="password_confirm" type="password" class="form-control" id="password_confirm">
               </div>
               <div class="col-md-6">
+
                 <label for="role" class="form-label">نقش</label>
                 <select name="role" class="form-select" id="role" required="">
-                  <option value="admin">مدیر</option>
-                  <option value="author">نویسنده</option>
-                  <option value="user">کاربر عادی</option>
-                </select>
+                  <option value="admin" <?php if ($userinfo[0]['role'] == 'admin')
+                    echo "selected" ?>>مدیر</option>
+                    <option value="author" <?php if ($userinfo[0]['role'] == 'author')
+                    echo 'selected' ?>>نویسنده</option>
+                    <option value="user" <?php if ($userinfo[0]['role'] == 'user')
+                    echo 'selected' ?>>کاربر عادی</option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <!--end::Body-->
-            <!--begin::Footer-->
-            <div class="card-footer">
-              <button name="edit_user_btn" type="submit" class="btn btn-primary">ویرایش</button>
-            </div>
-            <!--end::Footer-->
-          </form>
-          <!--end::Form-->
+              <!--end::Body-->
+              <!--begin::Footer-->
+              <div class="card-footer">
+                <button name="edit_user_btn" type="submit" class="btn btn-primary">ویرایش</button>
+              </div>
+              <!--end::Footer-->
+            </form>
+            <!--end::Form-->
+          </div>
+          <!--end::Quick Example-->
         </div>
-        <!--end::Quick Example-->
       </div>
+      <!--end::Container-->
     </div>
-    <!--end::Container-->
-  </div>
-  <!--end::App Content Header-->
-  <!--begin::App Content-->
-  <div class="app-content">
-    <!--begin::Container-->
-    <div class="container-fluid">
+    <!--end::App Content Header-->
+    <!--begin::App Content-->
+    <div class="app-content">
+      <!--begin::Container-->
+      <div class="container-fluid">
 
 
+      </div>
+      <!--end::Container-->
     </div>
-    <!--end::Container-->
+    <!--end::App Content-->
+  </main>
+  <!--end::App Main-->
+
+
   </div>
-  <!--end::App Content-->
-</main>
-<!--end::App Main-->
-
-
-</div>
-<!--end::App Wrapper-->
-<!--begin::Script-->
+  <!--end::App Wrapper-->
+  <!--begin::Script-->
 
 <?php include_once('./footer.php') ?>
