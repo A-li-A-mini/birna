@@ -74,12 +74,6 @@ if (isset($_POST['edit_user_btn'])) {
   die;
 }
 
-
-
-echo "<pre>";
-var_dump($userinfo);
-echo "</pre>";
-
 ?>
 
 
